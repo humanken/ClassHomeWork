@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -149,6 +150,7 @@
                                 <segments>
                                     <segment title="Class Name"/>
                                     <segment title="Image"/>
+                                    <segment title="Carousel"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
                                 <connections>
@@ -156,19 +158,26 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ip-mL3">
-                                <rect key="frame" x="9" y="173" width="374" height="637"/>
+                                <rect key="frame" x="8" y="171" width="372" height="637"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
                                     <segue destination="yxO-l0-TI8" kind="embed" id="IeA-o1-OWq"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-Jp-SAM">
+                                <rect key="frame" x="9" y="171" width="372" height="637"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="5L9-Kg-RaF" kind="embed" id="4yc-3K-cCR"/>
+                                </connections>
+                            </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-OE-Kq3">
-                                <rect key="frame" x="9" y="173" width="374" height="637"/>
+                                <rect key="frame" x="9" y="171" width="372" height="637"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
-                                    <segue destination="LHK-q2-OHe" kind="embed" id="ZNR-UC-wJu"/>
+                                    <segue destination="LHK-q2-OHe" kind="embed" id="QIK-vt-sKE"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -178,8 +187,9 @@
                     <connections>
                         <outlet property="LabelTitle" destination="T5Z-nD-0H2" id="W7J-h7-4FO"/>
                         <outlet property="SegmentControl" destination="lpg-pu-rBh" id="oRi-KZ-hmu"/>
-                        <outletCollection property="ContainVCs" destination="v7q-ip-mL3" collectionClass="NSMutableArray" id="3Ig-lt-veN"/>
-                        <outletCollection property="ContainVCs" destination="gJ0-OE-Kq3" collectionClass="NSMutableArray" id="uBO-fC-J4e"/>
+                        <outletCollection property="ContainVCs" destination="v7q-ip-mL3" collectionClass="NSMutableArray" id="IT1-Er-5Yc"/>
+                        <outletCollection property="ContainVCs" destination="gJ0-OE-Kq3" collectionClass="NSMutableArray" id="nma-zz-DLf"/>
+                        <outletCollection property="ContainVCs" destination="MXb-Jp-SAM" collectionClass="NSMutableArray" id="hnI-FR-o2M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSi-fc-jju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,7 +201,7 @@
             <objects>
                 <viewController id="yxO-l0-TI8" customClass="SegmentClassVC" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yN-Kf-tYm">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="637"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-Bf-kIP">
@@ -232,31 +242,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPd-0d-KSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="hbg-N2-ctv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="370"/>
+            <point key="canvasLocation" x="1731" y="-282"/>
         </scene>
-        <!--Segment ImgVC-->
+        <!--Segment Image Controller-->
         <scene sceneID="DxP-RY-L1A">
             <objects>
-                <viewController id="LHK-q2-OHe" customClass="SegmentImgVC" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LHK-q2-OHe" customClass="SegmentImageController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d04-3u-b5T">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="637"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23R-4o-lcC">
-                                <rect key="frame" x="266" y="69" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="valueChange_swich:" destination="LHK-q2-OHe" eventType="valueChanged" id="dQB-6f-MH1"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片輪播：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Hd-GOd">
-                                <rect key="frame" x="40" y="47" width="218" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片自動切換：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Hd-GOd">
+                                <rect key="frame" x="16" y="47" width="262" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-Ts-2d2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image01" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-Ts-2d2">
                                 <rect key="frame" x="40" y="172" width="292" height="292"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
@@ -264,25 +267,106 @@
                                 <rect key="frame" x="38" y="520" width="296" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="valueChange_slider:" destination="LHK-q2-OHe" eventType="valueChanged" id="trf-vf-Xvb"/>
+                                    <action selector="valueChange_slider:" destination="LHK-q2-OHe" eventType="valueChanged" id="6NV-eA-VQ9"/>
                                 </connections>
                             </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23R-4o-lcC">
+                                <rect key="frame" x="286" y="69" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="valueChange_swich:" destination="LHK-q2-OHe" eventType="valueChanged" id="rJV-M7-zON"/>
+                                </connections>
+                            </switch>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="n4F-K3-1he"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="ePT-Ts-2d2" id="b9t-Ix-FKg"/>
-                        <outlet property="LabelStatus" destination="QBk-Hd-GOd" id="Jnx-eR-Idx"/>
-                        <outlet property="Slider" destination="pBm-ic-qrf" id="Bur-OB-PtL"/>
-                        <outlet property="Swich" destination="23R-4o-lcC" id="aTL-J9-OKj"/>
+                        <outlet property="ImageView" destination="ePT-Ts-2d2" id="WUm-RZ-aki"/>
+                        <outlet property="LabelStatus" destination="QBk-Hd-GOd" id="RWe-w9-ODP"/>
+                        <outlet property="Swich" destination="23R-4o-lcC" id="BzJ-id-cJo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECx-R0-bPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.6923076923076" y="-175.23696682464455"/>
+            <point key="canvasLocation" x="2476.9230769230767" y="-37.322274881516584"/>
+        </scene>
+        <!--Segment Carousel Controller-->
+        <scene sceneID="27Q-bK-TcS">
+            <objects>
+                <viewController id="5L9-Kg-RaF" customClass="SegmentCarouselController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t7P-dd-Pk3">
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="637"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片輪播：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-m5-wef">
+                                <rect key="frame" x="40" y="47" width="218" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSz-mx-DFw">
+                                <rect key="frame" x="266" y="69" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="valueChange_swich:" destination="5L9-Kg-RaF" eventType="valueChanged" id="ac6-QN-ajF"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="14.600000381469727" minValue="7.3000001907348633" maxValue="29.200000762939453" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-NR-iMT">
+                                <rect key="frame" x="38" y="520" width="296" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="valueChange_slider:" destination="5L9-Kg-RaF" eventType="valueChanged" id="0Ry-4A-6aX"/>
+                                </connections>
+                            </slider>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9jO-V1-qBW">
+                                <rect key="frame" x="40" y="172" width="292" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="V6e-Gu-1I5">
+                                    <size key="itemSize" width="292" height="292"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="PVt-ra-eoP" customClass="MyCollectionViewCell" customModule="Project_Class" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="292"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1Fq-e2-EeR">
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="292"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jt-Th-diK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="292" height="292"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="ImgView" destination="6jt-Th-diK" id="IjE-aG-xTb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </view>
+                    <connections>
+                        <outlet property="LabelStatus" destination="21Y-m5-wef" id="KCZ-R5-knd"/>
+                        <outlet property="Swich" destination="qSz-mx-DFw" id="2Zw-nM-IMe"/>
+                        <outlet property="myCollectionView" destination="9jO-V1-qBW" id="7hM-qs-y6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sr-jb-cqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730.7692307692307" y="273.34123222748815"/>
         </scene>
     </scenes>
     <resources>
+        <image name="image01" width="512" height="512"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

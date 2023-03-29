@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F19BC8C29D443080030D6A0 /* SegmentImageConotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19BC8B29D443080030D6A0 /* SegmentImageConotroller.swift */; };
+		1F19BC8E29D444AA0030D6A0 /* SegmentCarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19BC8D29D444AA0030D6A0 /* SegmentCarouselController.swift */; };
 		1F7B967029D2B7E300A5814E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B966F29D2B7E300A5814E /* AppDelegate.swift */; };
 		1F7B967229D2B7E300A5814E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B967129D2B7E300A5814E /* SceneDelegate.swift */; };
 		1F7B967429D2B7E300A5814E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B967329D2B7E300A5814E /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F19BC8B29D443080030D6A0 /* SegmentImageConotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentImageConotroller.swift; sourceTree = "<group>"; };
+		1F19BC8D29D444AA0030D6A0 /* SegmentCarouselController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCarouselController.swift; sourceTree = "<group>"; };
 		1F7B966C29D2B7E300A5814E /* Project_Class.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_Class.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7B966F29D2B7E300A5814E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7B967129D2B7E300A5814E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				1F7B967829D2B7E400A5814E /* Assets.xcassets */,
 				1F7B967A29D2B7E400A5814E /* LaunchScreen.storyboard */,
 				1F7B967D29D2B7E400A5814E /* Info.plist */,
+				1F19BC8B29D443080030D6A0 /* SegmentImageConotroller.swift */,
+				1F19BC8D29D444AA0030D6A0 /* SegmentCarouselController.swift */,
 			);
 			path = Project_Class;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 				1F7B968429D2D3E200A5814E /* SecondViewController.swift in Sources */,
 				1F7B967429D2B7E300A5814E /* ViewController.swift in Sources */,
 				1F7B967029D2B7E300A5814E /* AppDelegate.swift in Sources */,
+				1F19BC8E29D444AA0030D6A0 /* SegmentCarouselController.swift in Sources */,
+				1F19BC8C29D443080030D6A0 /* SegmentImageConotroller.swift in Sources */,
 				1F7B967229D2B7E300A5814E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

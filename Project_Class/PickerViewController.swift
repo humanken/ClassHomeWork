@@ -9,13 +9,25 @@ import UIKit
 
 class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var cityPickerView: UIPickerView!
+    @IBOutlet weak var areaPickerView: UIPickerView!
+    
+    var citySelect = "台南市"
     let cityList = ["台北市", "新北市", "桃園市", "台中市", "台南市", "高雄市"]
-    let areaList = ["永康區", "安定區", "佳里區"]
+    let areaListDict = [
+        "台北市": ["松山區", "信義區", "萬華區"],
+        "新北市": ["板橋區", "新店區", "林口區"],
+        "桃園市": ["中壢區", "大溪區", "蘆竹區"],
+        "台中市": ["北屯區", "沙鹿區", "龍井區"],
+        "台南市": ["新營區", "安定區", "佳里區"],
+        "高雄市": ["左營區", "鳳山區", "旗津區"]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cityPickerView.selectRow(cityList.firstIndex(of: citySelect)!, inComponent: 0, animated: false)
 
-        // Do any additional setup after loading the view.
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -35,7 +47,7 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             return cityList.count
         }
         else if pickerView.tag == 1{
-            return areaList.count
+            return areaListDict[citySelect]!.count
         }
         else{
             return 0
@@ -47,7 +59,7 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             return cityList[row]
         }
         else if pickerView.tag == 1{
-            return areaList[row]
+            return areaListDict[citySelect]![row]
         }
         return nil
     }
@@ -55,9 +67,12 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0{
             print("選擇的城市： \(cityList[row])")
+            citySelect = cityList[row]
+            areaPickerView.reloadComponent(0)
+            areaPickerView.selectRow(0, inComponent: 0, animated: false)
         }
         else if pickerView.tag == 1{
-            print("選擇的地區： \(areaList[row])")
+            print("選擇的地區： \(areaListDict[citySelect]![row])")
         }
     }
 

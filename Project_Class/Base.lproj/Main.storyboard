@@ -195,7 +195,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ip-mL3">
-                                <rect key="frame" x="3" y="167" width="373" height="638"/>
+                                <rect key="frame" x="3" y="166" width="373" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -203,14 +203,14 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-Jp-SAM">
-                                <rect key="frame" x="5" y="167" width="371" height="638"/>
+                                <rect key="frame" x="4" y="166" width="372" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="5L9-Kg-RaF" kind="embed" id="4yc-3K-cCR"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-OE-Kq3">
-                                <rect key="frame" x="5" y="167" width="371" height="638"/>
+                                <rect key="frame" x="4" y="166" width="372" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -238,7 +238,7 @@
             <objects>
                 <viewController id="yxO-l0-TI8" customClass="SegmentClassVC" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yN-Kf-tYm">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="638"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-Bf-kIP">
@@ -286,7 +286,7 @@
             <objects>
                 <viewController id="LHK-q2-OHe" customClass="SegmentImageController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d04-3u-b5T">
-                        <rect key="frame" x="0.0" y="0.0" width="371" height="638"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片自動切換：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Hd-GOd">
@@ -333,7 +333,7 @@
             <objects>
                 <viewController id="5L9-Kg-RaF" customClass="SegmentCarouselController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7P-dd-Pk3">
-                        <rect key="frame" x="0.0" y="0.0" width="371" height="638"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片輪播：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-m5-wef">

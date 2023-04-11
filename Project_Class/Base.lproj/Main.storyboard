@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gVR-Ih-uFA">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,6 +9,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Picker View Controller-->
+        <scene sceneID="sIp-nU-vR6">
+            <objects>
+                <viewController id="gVR-Ih-uFA" customClass="PickerViewController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="28h-va-ILB">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDk-yr-YKb">
+                                <rect key="frame" x="-1" y="424" width="391" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gVR-Ih-uFA" id="Jgs-Ok-bZp"/>
+                                    <outlet property="delegate" destination="gVR-Ih-uFA" id="Nbl-yf-u92"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM0-eb-Y6Z">
+                                <rect key="frame" x="-1" y="262" width="391" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gVR-Ih-uFA" id="u9B-lI-Y1f"/>
+                                    <outlet property="delegate" destination="gVR-Ih-uFA" id="Ywq-rQ-FY8"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dFv-7P-FUl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="areaPickerView" destination="DDk-yr-YKb" id="aCR-vJ-8M8"/>
+                        <outlet property="cityPickerView" destination="LM0-eb-Y6Z" id="k2k-nv-6z3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdm-f6-lZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="-38"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -158,7 +195,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ip-mL3">
-                                <rect key="frame" x="3" y="169" width="373" height="636"/>
+                                <rect key="frame" x="3" y="166" width="373" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -166,14 +203,14 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-Jp-SAM">
-                                <rect key="frame" x="7" y="169" width="372" height="636"/>
+                                <rect key="frame" x="4" y="166" width="372" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="5L9-Kg-RaF" kind="embed" id="4yc-3K-cCR"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-OE-Kq3">
-                                <rect key="frame" x="7" y="169" width="372" height="636"/>
+                                <rect key="frame" x="4" y="166" width="372" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -201,7 +238,7 @@
             <objects>
                 <viewController id="yxO-l0-TI8" customClass="SegmentClassVC" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yN-Kf-tYm">
-                        <rect key="frame" x="0.0" y="0.0" width="373.18195956460454" height="635.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-Bf-kIP">
@@ -249,7 +286,7 @@
             <objects>
                 <viewController id="LHK-q2-OHe" customClass="SegmentImageController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d04-3u-b5T">
-                        <rect key="frame" x="0.0" y="0.0" width="371.6205287714472" height="635.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片自動切換：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Hd-GOd">
@@ -296,7 +333,7 @@
             <objects>
                 <viewController id="5L9-Kg-RaF" customClass="SegmentCarouselController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7P-dd-Pk3">
-                        <rect key="frame" x="0.0" y="0.0" width="371.6205287714472" height="635.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="圖片輪播：開啟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-m5-wef">
@@ -368,6 +405,9 @@
     </scenes>
     <resources>
         <image name="image01" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

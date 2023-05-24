@@ -355,7 +355,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ip-mL3">
-                                <rect key="frame" x="8" y="170" width="374" height="640"/>
+                                <rect key="frame" x="8" y="170" width="373" height="640"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -363,14 +363,14 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-Jp-SAM">
-                                <rect key="frame" x="10" y="170" width="372" height="640"/>
+                                <rect key="frame" x="9" y="170" width="372" height="640"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="5L9-Kg-RaF" kind="embed" id="4yc-3K-cCR"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-OE-Kq3">
-                                <rect key="frame" x="10" y="170" width="372" height="640"/>
+                                <rect key="frame" x="9" y="170" width="372" height="640"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
@@ -398,7 +398,7 @@
             <objects>
                 <viewController id="yxO-l0-TI8" customClass="SegmentClassVC" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yN-Kf-tYm">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="640"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-Bf-kIP">
@@ -496,8 +496,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登入系統" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65W-5r-Mci">
-                                <rect key="frame" x="40" y="47" width="311" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="檔案管理與地圖展示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65W-5r-Mci">
+                                <rect key="frame" x="0.0" y="47" width="390" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" systemColor="systemCyanColor"/>
@@ -530,7 +530,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-FP-e9R">
-                                <rect key="frame" x="66" y="602" width="130" height="59"/>
+                                <rect key="frame" x="66" y="602" width="120" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="登入">
@@ -541,17 +541,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Z8-q2-MMu">
-                                <rect key="frame" x="204" y="602" width="121" height="59"/>
+                                <rect key="frame" x="204" y="602" width="120" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="創建帳號">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MfU-NG-Jxu" kind="show" id="NEl-o1-hFg"/>
+                                    <segue destination="MfU-NG-Jxu" kind="show" identifier="homeToCreateUser" id="NEl-o1-hFg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjl-YJ-NFS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請先登入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjl-YJ-NFS">
                                 <rect key="frame" x="40" y="150" width="311" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -573,10 +573,10 @@
             </objects>
             <point key="canvasLocation" x="341.53846153846155" y="1349.2890995260664"/>
         </scene>
-        <!--View Controller-->
+        <!--Create User View Controller-->
         <scene sceneID="ftI-aY-Y3V">
             <objects>
-                <viewController id="MfU-NG-Jxu" sceneMemberID="viewController">
+                <viewController id="MfU-NG-Jxu" customClass="CreateUserViewController" customModule="Project_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zk3-oa-mpz">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -630,7 +630,7 @@
                                 <rect key="frame" x="40" y="47" width="311" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemCyanColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帳號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esM-XB-b2u">
@@ -647,12 +647,21 @@
                                 <buttonConfiguration key="configuration" style="plain" title="創建">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnClick_CreateUser:" destination="MfU-NG-Jxu" eventType="touchUpInside" id="LA3-4S-Abj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iKG-tv-dEV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0ge-vV-EZ7"/>
+                    <connections>
+                        <outlet property="checkPasswordInput" destination="q3x-Hg-mRo" id="tNK-3H-BWV"/>
+                        <outlet property="nicknameInput" destination="Cte-4J-SRR" id="r2a-UX-KZr"/>
+                        <outlet property="passwordInput" destination="DRH-Uc-fnP" id="ggJ-xv-scG"/>
+                        <outlet property="usernameInput" destination="MS9-3z-A4G" id="PbD-a2-znA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgo-Iv-iuu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

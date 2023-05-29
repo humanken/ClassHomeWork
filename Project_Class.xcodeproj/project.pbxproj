@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		1F15BF632A1D015A006CD142 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15BF622A1D015A006CD142 /* LoginViewController.swift */; };
 		1F15BF652A1DBF55006CD142 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15BF642A1DBF55006CD142 /* CreateUserViewController.swift */; };
+		1F15BF672A1F1236006CD142 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15BF662A1F1236006CD142 /* FileViewController.swift */; };
 		1F19BC8C29D443080030D6A0 /* SegmentImageConotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19BC8B29D443080030D6A0 /* SegmentImageConotroller.swift */; };
 		1F19BC8E29D444AA0030D6A0 /* SegmentCarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19BC8D29D444AA0030D6A0 /* SegmentCarouselController.swift */; };
+		1F3945F92A205F46001811D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3945F82A205F46001811D2 /* MapViewController.swift */; };
+		1F3945FC2A218F03001811D2 /* finalExamFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3945FB2A218F03001811D2 /* finalExamFuncs.swift */; };
 		1F4AFFE829EFB33F0080142C /* WebkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AFFE729EFB33F0080142C /* WebkitViewController.swift */; };
 		1F4AFFEA29EFBDED0080142C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AFFE929EFBDED0080142C /* TableViewController.swift */; };
 		1F7B967029D2B7E300A5814E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B966F29D2B7E300A5814E /* AppDelegate.swift */; };
@@ -26,8 +29,11 @@
 /* Begin PBXFileReference section */
 		1F15BF622A1D015A006CD142 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F15BF642A1DBF55006CD142 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		1F15BF662A1F1236006CD142 /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
 		1F19BC8B29D443080030D6A0 /* SegmentImageConotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentImageConotroller.swift; sourceTree = "<group>"; };
 		1F19BC8D29D444AA0030D6A0 /* SegmentCarouselController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCarouselController.swift; sourceTree = "<group>"; };
+		1F3945F82A205F46001811D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1F3945FB2A218F03001811D2 /* finalExamFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalExamFuncs.swift; sourceTree = "<group>"; };
 		1F4AFFE729EFB33F0080142C /* WebkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebkitViewController.swift; sourceTree = "<group>"; };
 		1F4AFFE929EFBDED0080142C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1F7B966C29D2B7E300A5814E /* Project_Class.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_Class.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +64,25 @@
 			children = (
 				1F15BF622A1D015A006CD142 /* LoginViewController.swift */,
 				1F15BF642A1DBF55006CD142 /* CreateUserViewController.swift */,
+				1F15BF662A1F1236006CD142 /* FileViewController.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		1F3945F72A205F0D001811D2 /* MapKitView */ = {
+			isa = PBXGroup;
+			children = (
+				1F3945F82A205F46001811D2 /* MapViewController.swift */,
+			);
+			path = MapKitView;
+			sourceTree = "<group>";
+		};
+		1F3945FA2A218ECF001811D2 /* CustomFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				1F3945FB2A218F03001811D2 /* finalExamFuncs.swift */,
+			);
+			path = CustomFunctions;
 			sourceTree = "<group>";
 		};
 		1F4AFFEB29F1868D0080142C /* Segue (prepare, unwind) */ = {
@@ -147,6 +170,8 @@
 		1F7B966E29D2B7E300A5814E /* Project_Class */ = {
 			isa = PBXGroup;
 			children = (
+				1F3945FA2A218ECF001811D2 /* CustomFunctions */,
+				1F3945F72A205F0D001811D2 /* MapKitView */,
 				1F15BF612A1D012B006CD142 /* UserDefaults */,
 				1F4AFFF229F18BC90080142C /* TableView */,
 				1F4AFFF129F18BA40080142C /* WebKitView */,
@@ -235,11 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7B968429D2D3E200A5814E /* SecondViewController.swift in Sources */,
+				1F3945FC2A218F03001811D2 /* finalExamFuncs.swift in Sources */,
 				1F7B967429D2B7E300A5814E /* HomeViewController.swift in Sources */,
 				1F4AFFE829EFB33F0080142C /* WebkitViewController.swift in Sources */,
 				1F7B967029D2B7E300A5814E /* AppDelegate.swift in Sources */,
 				1F19BC8E29D444AA0030D6A0 /* SegmentCarouselController.swift in Sources */,
 				1F19BC8C29D443080030D6A0 /* SegmentImageConotroller.swift in Sources */,
+				1F3945F92A205F46001811D2 /* MapViewController.swift in Sources */,
+				1F15BF672A1F1236006CD142 /* FileViewController.swift in Sources */,
 				1F15BF652A1DBF55006CD142 /* CreateUserViewController.swift in Sources */,
 				1F4AFFEA29EFBDED0080142C /* TableViewController.swift in Sources */,
 				1FBE90B529E5A3A300B644F0 /* PickerViewController.swift in Sources */,

@@ -19,6 +19,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Create VC start")
         usernameInput.delegate = self
         nicknameInput.delegate = self
         passwordInput.delegate = self
@@ -26,8 +27,11 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.backgroundColor = .white
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.backgroundColor == .red {
+            textField.backgroundColor = .white
+        }
+        return true
     }
     
     @IBAction func btnClick_CreateUser(_ sender: UIButton) {
@@ -65,17 +69,18 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
         /* ---------------------------- 密碼 ---------------------------- */
         // 檢查 輸入框, 若空白則傳回nil
         let password = funcs.checkInput(self, passwordInput, alert: passwordAlertCtrl)
+        if password == nil { return }
         // 檢查 輸入框, 若空白則傳回nil
         let checkPassword = funcs.checkInput(self, checkPasswordInput, alert: passwordAlertCtrl)
         // 若是nil, 則結束
-        if password == nil || checkPassword == nil { return }
+        if checkPassword == nil { return }
         // 兩次密碼是否相同, 不相同則返回
         if password != checkPassword {
             present(funcs.alertSetting(title: "兩次密碼不相同", message: "請重新輸入密碼", style: .alert), animated: true)
             funcs.clearTextField([passwordInput, checkPasswordInput])
             return
         }
-        /* -------------------------- 處存資料 --------------------------- */
+        /* -------------------------- 儲存資料 --------------------------- */
         funcs.addDataInUser(username!, UserDefaults: user, forkey: "username")
         funcs.addDataInUser(nickname!, UserDefaults: user, forkey: "nickname")
         funcs.addDataInUser(password!, UserDefaults: user, forkey: "password")
@@ -85,11 +90,12 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
                 title: "創建成功",
                 message: "帳號已建立，請重新登入",
                 style: .alert,
-                actionCompletion: {
-                    // 關閉 UIViewController視窗
-                    self.dismiss(animated: true)
-                }),
-            animated: true)
+                actions: [
+                    ["completion":{
+                        // 關閉 UIViewController視窗
+                        self.dismiss(animated: true)}]
+                ]
+            ), animated: true)
     }
     
 }

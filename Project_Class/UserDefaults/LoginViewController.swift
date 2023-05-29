@@ -20,9 +20,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Login VC start")
+        
         userInput.delegate = self
         passwordInput.delegate = self
-
+        
     }
     
     /* 透過 Segue 傳送 UserDefaults 物件到 createUserVC */
@@ -31,6 +33,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "homeToCreateUser" {
             let createUserVC = segue.destination as! CreateUserViewController
             createUserVC.user = user
+        }
+        if segue.identifier == "homeToFile" {
+            let fileVC = segue.destination as! FileViewController
+            fileVC.user = user
         }
         
     }
@@ -59,7 +65,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // --------------------------------------- 登入 ----------------------------------------
         if let nickname = login(username: username!, password: password!) {
-            loginStatus.text = "登入成功，歡迎\(nickname)"
+            loginStatus.text = "登入成功"
+            let alertCtrl = funcs.alertSetting(
+                title: "登入成功，歡迎 \(nickname)",
+                message: "請選擇要前往的頁面",
+                style: .alert,
+                actions: [
+                    ["title": "檔案管理", "completion": { self.performSegue(withIdentifier: "homeToFile", sender: sender) }],
+                    ["title": "地圖展示", "completion": { self.show(self.storyboard?.instantiateViewController(withIdentifier: "mapVC") as! MapViewController, sender: sender)}],
+                    ["title": "查看帳號資料"]
+                ]
+            )
+            present(alertCtrl, animated: true)
         }
     }
     
@@ -75,7 +92,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             title: "帳號未存在",
             message: "請創建新帳號",
             style: .alert,
-            actionCompletion: {self.funcs.clearTextField([self.userInput, self.passwordInput])}
+            actions: [
+                ["completion":{self.funcs.clearTextField([self.userInput, self.passwordInput])}]
+            ]
         )
         // 判斷 帳號是否已存在 UserDefaults 中
         if funcs.isDataExist(self, UserDefaults: user, value: username, forkey: "username", noExistAlert: usernameAlertCtrl) {
@@ -94,7 +113,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     title: "密碼錯誤",
                     message: "請重新輸入密碼",
                     style: .alert,
-                    actionCompletion: {self.funcs.clearTextField([self.passwordInput])}
+                    actions: [
+                        ["completion":{self.funcs.clearTextField([self.passwordInput])}]
+                    ]
                 ), animated: true)
             return nil
         }
@@ -102,79 +123,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             // 若輸入相同，登入成功，回傳 此帳號的nickname
             return user.stringArray(forKey: "nickname")![userIndex]
         }
-    }
-
-}
-
-
-/* 自訂函式 */
-class customFunc {
-    
-    /* 檢查輸入框，是否為空白 */
-    func checkInput(_ cls: UIViewController, _ textField: UITextField, alert emptyAlertMessage: UIAlertController) -> String? {
-        
-        let text = textField.text
-        if text == "" {
-            // 若空白則將輸入框背景顏色變紅色，彈出消息框 -> 回傳nil
-            textField.backgroundColor = .red
-            cls.present(emptyAlertMessage, animated: true)
-            return nil
-        }
-        // 否則 -> 回傳 輸入框值
-        return text
-    }
-    
-    /* 清空 輸入框 的值 */
-    func clearTextField(_ tfs: [UITextField]) { for tf in tfs { tf.text = "" } }
-    
-    /* 設定消息框 -> 回傳 UIAlertController */
-    func alertSetting(title: String, message: String, style: UIAlertController.Style = .actionSheet, actionTitle: String = "確定", actionStyle: UIAlertAction.Style = .default, actionCompletion: @escaping () -> Void = {}) -> UIAlertController {
-        
-        // 建立 消息框 (alertController 物件)
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        // 建立 消息框按鈕 (alertAction 物件)
-        let action = UIAlertAction(title: actionTitle, style: actionStyle) { _ in actionCompletion() }
-        // 將 按鈕 加入到 消息框
-        alertController.addAction(action)
-        
-        return alertController
-    }
-    
-    /* 判斷 UserDefaults 指定 key 的 value，是否存在 */
-    func isDataExist(_ cls: UIViewController, UserDefaults user: UserDefaults, value: String, forkey key: String, noExistAlert noExistAlertMsg: UIAlertController? = nil, existAlert existAlertMsg: UIAlertController? = nil) -> Bool {
-        
-        // 取得 資料
-        let dataList = user.stringArray(forKey: key)
-        print("now key: \(key) in user defaults data: \(String(describing: dataList))")
-        // 若 資料 為nil 或 不包含value ，則不存在 -> 回傳 false
-        if dataList == nil || ((dataList?.contains(value)) == false) {
-            if noExistAlertMsg != nil {
-                cls.present(noExistAlertMsg!, animated: true)
-            }
-            return false
-        }
-        else {
-            if existAlertMsg != nil {
-                cls.present(existAlertMsg!, animated: true)
-            }
-            return true
-        }
-    }
-    
-    /* 將 value 存入 UserDefaults 指定的 key */
-    func addDataInUser(_ value: String, UserDefaults user: UserDefaults, forkey key: String) {
-        
-        // 取得 陣列資料
-        var dataList = user.stringArray(forKey: key)
-        // 若資料為nil，則將資料變為空陣列
-        if dataList == nil {
-            dataList = []
-        }
-        // 將 value 添加進 資料
-        dataList?.append(value)
-        // 依據 key 儲存 資料 到 UserDefaults
-        user.set(dataList, forKey: key)
-        print("\(key) 已儲存 \(value)")
     }
 
 }

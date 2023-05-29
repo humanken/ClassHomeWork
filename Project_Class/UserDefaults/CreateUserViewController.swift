@@ -48,7 +48,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
             // 建立 帳號存在alert
             let alertCtrl = funcs.alertSetting(title: "帳號已存在", message: "此帳號已被創建過", style: .alert)
             // 檢查 帳號是否已存在
-            if funcs.isDataExist(self, UserDefaults: user, value: username, forkey: "username", existAlert: alertCtrl) {
+            if funcs.isDataExist(in: user, self, value: username, forkey: "username", existAlert: alertCtrl) {
                 funcs.clearTextField([usernameInput])
                 return
             }
@@ -61,7 +61,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
             // 建立 暱稱存在alert
             let alertCtrl = funcs.alertSetting(title: "暱稱已存在", message: "此暱稱已被創建過", style: .alert)
             // 檢查 暱稱是否已存在
-            if funcs.isDataExist(self, UserDefaults: user, value: nickname, forkey: "username", existAlert: alertCtrl) {
+            if funcs.isDataExist(in: user, self, value: nickname, forkey: "username", existAlert: alertCtrl) {
                 funcs.clearTextField([nicknameInput])
                 return
             }
@@ -81,9 +81,9 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
             return
         }
         /* -------------------------- 儲存資料 --------------------------- */
-        funcs.addDataInUser(username!, UserDefaults: user, forkey: "username")
-        funcs.addDataInUser(nickname!, UserDefaults: user, forkey: "nickname")
-        funcs.addDataInUser(password!, UserDefaults: user, forkey: "password")
+        funcs.addData(in: user, username!, forkey: "username")
+        funcs.addData(in: user, nickname!, forkey: "nickname")
+        funcs.addData(in: user, password!, forkey: "password")
         
         present(
             funcs.alertSetting(

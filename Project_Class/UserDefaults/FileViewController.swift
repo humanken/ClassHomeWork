@@ -8,8 +8,6 @@
 import UIKit
 
 class FileViewController: UIViewController {
-    
-    var user: UserDefaults!
 
     @IBOutlet weak var filenameInput: UITextField!
     @IBOutlet weak var docLabel: UILabel!

@@ -51,7 +51,7 @@ class customFunc {
     
     /* --------------------------------------------------- UserDefaults 函式 -------------------------------------------------- */
     /* 判斷 UserDefaults 指定 key 的 value，是否存在 */
-    func isDataExist(_ cls: UIViewController, UserDefaults user: UserDefaults, value: String, forkey key: String, noExistAlert noExistAlertMsg: UIAlertController? = nil, existAlert existAlertMsg: UIAlertController? = nil) -> Bool {
+    func isDataExist(in user: UserDefaults, _ cls: UIViewController, value: String, forkey key: String, noExistAlert noExistAlertMsg: UIAlertController? = nil, existAlert existAlertMsg: UIAlertController? = nil) -> Bool {
         
         // 取得 資料
         let dataList = user.stringArray(forKey: key)
@@ -72,7 +72,7 @@ class customFunc {
     }
     
     /* 將 value 存入 UserDefaults 指定的 key */
-    func addDataInUser(_ value: String, UserDefaults user: UserDefaults, forkey key: String) {
+    func addData(in user: UserDefaults, _ value: String, forkey key: String) {
         
         // 取得 陣列資料
         var dataList = user.stringArray(forKey: key)
@@ -85,6 +85,26 @@ class customFunc {
         // 依據 key 儲存 資料 到 UserDefaults
         user.set(dataList, forKey: key)
         print("\(key) 已儲存 \(value)")
+    }
+    
+    /* 依據 username 刪除此帳號，重新儲存資料 */
+    func removeData(in user: UserDefaults, _ value: String!) {
+        var usernames = user.stringArray(forKey: "username")!
+        var nicknames = user.stringArray(forKey: "nickname")!
+        var passwords = user.stringArray(forKey: "password")!
+        
+        let index = usernames.firstIndex(of: value)!
+        let nickname = nicknames[index]
+        usernames.remove(at: index)
+        nicknames.remove(at: index)
+        passwords.remove(at: index)
+        
+        // 依據 key，直接更改整個陣列值
+        user.set(usernames, forKey: "username")
+        user.set(nicknames, forKey: "nickname")
+        user.set(passwords, forKey: "password")
+        print("User Name: \(value!), Nick Name: \(nickname) 刪除成功")
+        
     }
     /* ----------------------------------------------------------------------------------------------------------------------- */
     

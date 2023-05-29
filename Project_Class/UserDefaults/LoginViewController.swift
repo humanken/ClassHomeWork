@@ -34,11 +34,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let createUserVC = segue.destination as! CreateUserViewController
             createUserVC.user = user
         }
-        if segue.identifier == "homeToFile" {
-            let fileVC = segue.destination as! FileViewController
-            fileVC.user = user
-        }
-        
     }
     
     /* 輸入框開始編輯(獲取焦點) -> 輸入框背景顏色變白色 */
@@ -71,9 +66,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 message: "請選擇要前往的頁面",
                 style: .alert,
                 actions: [
-                    ["title": "檔案管理", "completion": { self.performSegue(withIdentifier: "homeToFile", sender: sender) }],
-                    ["title": "地圖展示", "completion": { self.show(self.storyboard?.instantiateViewController(withIdentifier: "mapVC") as! MapViewController, sender: sender)}],
-                    ["title": "查看帳號資料"]
+                    ["title": "檔案管理", "completion": {
+                        self.present(
+                            self.storyboard?.instantiateViewController(withIdentifier: "fileVC") as! FileViewController, animated: true) }],
+                    ["title": "地圖展示", "completion": { self.present(
+                        self.storyboard?.instantiateViewController(withIdentifier: "mapVC") as! MapViewController, animated: true)}],
+                    ["title": "查看帳號資料", "completion": {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "userVC") as! UserViewController
+                        vc.user = self.user
+                        self.present(vc, animated: true)
+                    }]
                 ]
             )
             present(alertCtrl, animated: true)
@@ -97,7 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             ]
         )
         // 判斷 帳號是否已存在 UserDefaults 中
-        if funcs.isDataExist(self, UserDefaults: user, value: username, forkey: "username", noExistAlert: usernameAlertCtrl) {
+        if funcs.isDataExist(in: user, self, value: username, forkey: "username", noExistAlert: usernameAlertCtrl) {
             // 若存在則取得此帳號的索引值
             userIndex = (user.stringArray(forKey: "username")?.firstIndex(of: username))!
         }

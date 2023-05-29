@@ -23,6 +23,7 @@
 		1F7B967929D2B7E400A5814E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7B967829D2B7E400A5814E /* Assets.xcassets */; };
 		1F7B967C29D2B7E400A5814E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7B967A29D2B7E400A5814E /* LaunchScreen.storyboard */; };
 		1F7B968429D2D3E200A5814E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B968329D2D3E200A5814E /* SecondViewController.swift */; };
+		1FAD35DE2A243C300057AF49 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD35DD2A243C300057AF49 /* UserViewController.swift */; };
 		1FBE90B529E5A3A300B644F0 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE90B429E5A3A300B644F0 /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		1F7B967B29D2B7E400A5814E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7B967D29D2B7E400A5814E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F7B968329D2D3E200A5814E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1FAD35DD2A243C300057AF49 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1FBE90B429E5A3A300B644F0 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				1F15BF622A1D015A006CD142 /* LoginViewController.swift */,
-				1F15BF642A1DBF55006CD142 /* CreateUserViewController.swift */,
 				1F15BF662A1F1236006CD142 /* FileViewController.swift */,
+				1F15BF642A1DBF55006CD142 /* CreateUserViewController.swift */,
+				1FAD35DD2A243C300057AF49 /* UserViewController.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7B968429D2D3E200A5814E /* SecondViewController.swift in Sources */,
+				1FAD35DE2A243C300057AF49 /* UserViewController.swift in Sources */,
 				1F3945FC2A218F03001811D2 /* finalExamFuncs.swift in Sources */,
 				1F7B967429D2B7E300A5814E /* HomeViewController.swift in Sources */,
 				1F4AFFE829EFB33F0080142C /* WebkitViewController.swift in Sources */,
